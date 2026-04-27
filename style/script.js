@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
 { name: 'Bùi Hoàng Long', nickname: 'Dragon', quote: 'Bay cao vươn xa.', img: 'style/img/ThanhVien/HoangLong.jpg', hobbies: 'Game, công nghệ', message: 'Đỉnh cao nhé!' },
 { name: 'Nguyễn Thành Long', nickname: 'King', quote: 'Sinh ra để dẫn đầu.', img: 'style/img/ThanhVien/ThanhLong.jpg', hobbies: 'Kinh doanh, lãnh đạo', message: 'Luôn top 1!' },
 { name: 'Đặng Hiền Mai', nickname: 'Soft', quote: 'Nhẹ nhàng mà sâu sắc.', img: 'style/img/ThanhVien/HienMai.jpg', hobbies: 'Vẽ, nghe nhạc', message: 'Luôn dễ thương!' },
-{ name: 'Tiêu Công Minh', nickname: 'Thinker', quote: 'Suy nghĩ tạo nên khác biệt.', img: 'style/img/ThanhVien/CongMinh.jpg', hobbies: 'Đọc sách, học tập', message: 'Thông minh mãi nhé!' },
+{ name: 'Tiêu Công Minh', nickname: 'Thinker', quote: 'Suy nghĩ tạo nên khác biệt.', img: 'style/img/ThanhVien/CongMInh.jpg', hobbies: 'Đọc sách, học tập', message: 'Thông minh mãi nhé!' },
 { name: 'Nguyễn Tuấn Nam', nickname: 'Storm', quote: 'Mạnh mẽ như bão.', img: 'style/img/ThanhVien/TuanNam.jpg', hobbies: 'Bóng đá, gym', message: 'Luôn bứt phá!' },
 { name: 'Trần Trọng Nghĩa', nickname: 'Hero', quote: 'Không ngại thử thách.', img: 'style/img/ThanhVien/TrongNghia.jpg', hobbies: 'Game, thể thao', message: 'Tin vào mình!' },
 { name: 'Chu Văn Nhân', nickname: 'Kind', quote: 'Tử tế là sức mạnh.', img: 'style/img/ThanhVien/VanNhan.jpg', hobbies: 'Thiện nguyện, đọc sách', message: 'Luôn tốt bụng!' },
