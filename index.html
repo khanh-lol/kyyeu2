@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="../i.postimg.cc/qvjz8QFW/Logo.png" />
-    <title>Thanh Xuân Của Chúng Ta - Kỷ Yếu</title>
+    <title>9A7</title>
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link
@@ -21,14 +21,15 @@
 <body style="overflow: hidden;">
     <div id="gatekeeper" class="gatekeeper-overlay">
         <div class="gate-card">
-            <img src="style/question/1.jpg" class="gate-img" alt="Câu hỏi">
-            <p class="gate-question">1 + 1 = ?</p>
+            <img id="gateImg" src="" class="gate-img" alt="Câu hỏi">
+            <p id="gateQuestion" class="gate-question"></p>
+
             <div class="gate-options">
-                <button class="gate-btn" data-answer="A">A. 5</button>
-                <button class="gate-btn" data-answer="B">B. 4</button>
-                <button class="gate-btn" data-answer="C">C. 3</button>
-                <button class="gate-btn" data-answer="D">D. 2</button>
-            </div>
+            <button class="gate-btn" data-answer="A"></button>
+            <button class="gate-btn" data-answer="B"></button>
+            <button class="gate-btn" data-answer="C"></button>
+            <button class="gate-btn" data-answer="D"></button>
+          </div>
         </div>
 
         <div id="gateAlert" class="gate-alert">
@@ -67,7 +68,7 @@
         <div class="sunlight"></div>
         <div class="particles" id="particles-js"></div>
         <div class="hero-content">
-            <h1 class="handwritten-title animate-up">Thanh Xuân Của Chúng Ta</h1>
+            <h1 class="handwritten-title animate-up">Thanh Xuân Của 9a7</h1>
             <p class="hero-subtitle animate-up-delay">"Những năm tháng rực rỡ dưới mái trường thân yêu"</p>
             <a href="#members" class="btn btn-primary animate-up-delay-2">Khám phá kỷ niệm</a>
         </div>
@@ -76,6 +77,263 @@
             <div class="mouse"></div>
         </div>
     </section>
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kỉ niệm thanh xuân</title>
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --border:#e5e7eb;
+      --text:#0f172a;
+      --muted:#64748b;
+      --accent1:#6366f1;
+      --accent2:#06b6d4;
+      --accent3:#f472b6;
+      --accent4:#22c55e;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    .wrap{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:16px;
+    }
+
+    .panel{
+      width:100%;
+      max-width:1100px;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:clamp(16px,4vw,30px);
+      box-shadow:0 15px 35px rgba(0,0,0,.05);
+      position:relative;
+      overflow:hidden;
+    }
+
+    /* nền đẹp nhưng nhẹ */
+    .panel::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(99,102,241,.12), transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(6,182,212,.12), transparent 40%);
+      z-index:0;
+    }
+
+    .panel > *{
+      position:relative;
+      z-index:1;
+    }
+
+    .header{
+      text-align:center;
+      margin-bottom:20px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:#f8fafc;
+      border:1px solid var(--border);
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+    }
+
+    .grid{
+      display:grid;
+      gap:12px;
+      grid-template-columns: repeat(4,1fr);
+    }
+
+    /* tablet */
+    @media(max-width:900px){
+      .grid{grid-template-columns:repeat(2,1fr);}
+    }
+
+    /* điện thoại */
+    @media(max-width:500px){
+      .grid{grid-template-columns:1fr;}
+    }
+
+    .card{
+      border-radius:18px;
+      background:#fff;
+      border:1px solid var(--border);
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      box-shadow:0 8px 20px rgba(0,0,0,.04);
+      min-height:140px;
+      transition:.2s;
+    }
+
+    .card:active{
+      transform:scale(.97);
+    }
+
+    .topline{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .icon{
+      font-size:22px;
+    }
+
+    .badge{
+      font-size:10px;
+      color:var(--muted);
+      text-transform:uppercase;
+    }
+
+    .big{
+      font-size: clamp(32px,8vw,60px);
+      font-weight:900;
+      margin-top:10px;
+    }
+
+    .label{
+      font-size:12px;
+      color:var(--muted);
+      letter-spacing:.2em;
+      text-transform:uppercase;
+    }
+
+    .c1 .big{color:var(--accent1);}
+    .c2 .big{color:var(--accent2);}
+    .c3 .big{color:var(--accent3);}
+    .c4 .big{color:var(--accent4);}
+
+    .footer-note{
+      margin-top:18px;
+      text-align:center;
+      font-size:12px;
+      color:var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="panel">
+
+      <div class="header">
+        <div class="eyebrow"><span class="dot"></span> Thanh xuân lớp mình</div>
+      </div>
+
+      <div class="grid">
+        <div class="card c1">
+          <div class="topline">
+            <div class="icon">👥</div>
+            <div class="badge">Lớp</div>
+          </div>
+          <div>
+            <div class="big">38</div>
+            <div class="label">Thành viên</div>
+          </div>
+        </div>
+
+        <div class="card c2">
+          <div class="topline">
+            <div class="icon">📚</div>
+            <div class="badge">Học</div>
+          </div>
+          <div>
+            <div class="big">4</div>
+            <div class="label">Năm</div>
+          </div>
+        </div>
+
+        <div class="card c3">
+          <div class="topline">
+            <div class="icon">✨</div>
+            <div class="badge">Nhớ</div>
+          </div>
+          <div>
+            <div class="big">∞</div>
+            <div class="label">Kỉ niệm</div>
+          </div>
+        </div>
+
+        <div class="card c4">
+          <div class="topline">
+            <div class="icon">🌷</div>
+            <div class="badge">Xuân</div>
+          </div>
+          <div>
+            <div class="big">1</div>
+            <div class="label">Thanh xuân</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-note">
+        Thanh xuân có thể qua đi, nhưng kỉ niệm thì ở lại.
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <section id="members" class="section members">
         <div class="container">
@@ -114,10 +372,17 @@
         <h2 class="section-title">Phim Ngắn Kỷ Niệm</h2>
         <div class="video-container">
             <div class="video-wrapper">
-                <video width="100%" height="100%" controls loop muted>
-                    <source src="9a7troi.mp4" type="video/mp4">
-                    Trình duyệt của bạn không hỗ trợ video.
-                </video>
+
+                <iframe 
+                    width="100%" 
+                    height="100%"
+                    src="https://www.youtube.com/embed/6LPZ-x_6kVo"
+                    title="Kỷ yếu lớp"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+
             </div>
         </div>
     </div>
@@ -245,6 +510,235 @@
         </div>
     </div>
 
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kì thi vào 10</title>
+
+  <style>
+    :root{
+      --bg:#f8fafc;
+      --card:#ffffffcc;
+      --border:#e5e7eb;
+      --text:#0f172a;
+      --muted:#64748b;
+      --accent:#6366f1;
+      --shadow:0 20px 40px rgba(0,0,0,.08);
+      --blur: blur(16px);
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, sans-serif;
+      background:
+        radial-gradient(circle at 20% 20%, #e0e7ff, transparent 40%),
+        radial-gradient(circle at 80% 30%, #cffafe, transparent 40%),
+        var(--bg);
+      color:var(--text);
+    }
+
+    .wrap{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+    }
+
+    .panel{
+      width:min(1000px,100%);
+      background:var(--card);
+      backdrop-filter:var(--blur);
+      border:1px solid var(--border);
+      border-radius:28px;
+      padding:40px 30px;
+      text-align:center;
+      box-shadow:var(--shadow);
+    }
+
+    /* QUOTE */
+    .quote{
+      font-size: clamp(28px,4vw,50px);
+      font-weight:900;
+      line-height:1.2;
+      letter-spacing:-.02em;
+      background: linear-gradient(90deg, #111, #6366f1);
+      -webkit-background-clip:text;
+      color:transparent;
+    }
+
+    .sub{
+      margin-top:10px;
+      font-size:14px;
+      letter-spacing:.25em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .date-pill{
+      display:inline-block;
+      margin-top:20px;
+      padding:10px 16px;
+      border-radius:14px;
+      background:#f1f5f9;
+      border:1px solid var(--border);
+      font-weight:600;
+      color:#334155;
+    }
+
+    .grid{
+      margin-top:30px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    @media(max-width:700px){
+      .grid{grid-template-columns:repeat(2,1fr);}
+    }
+
+    .card{
+      padding:20px;
+      border-radius:20px;
+      background:#ffffff;
+      border:1px solid var(--border);
+      box-shadow:0 10px 25px rgba(0,0,0,.05);
+      transition:.25s;
+    }
+
+    .card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 20px 35px rgba(0,0,0,.1);
+    }
+
+    .num{
+      font-size: clamp(40px,6vw,70px);
+      font-weight:800;
+      color:#111827;
+    }
+
+    .label{
+      margin-top:8px;
+      font-size:14px;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.15em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="panel">
+
+      <!-- QUOTE -->
+      <div class="quote">
+        Cười hôm nay thôi, mai còn phải cố gắng
+      </div>
+      <div class="sub">Kì thi vào 10</div>
+
+      <div class="date-pill">
+        🎯 <span id="targetText"></span>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="num" id="days">00</div>
+          <div class="label">Ngày</div>
+        </div>
+        <div class="card">
+          <div class="num" id="hours">00</div>
+          <div class="label">Giờ</div>
+        </div>
+        <div class="card">
+          <div class="num" id="minutes">00</div>
+          <div class="label">Phút</div>
+        </div>
+        <div class="card">
+          <div class="num" id="seconds">00</div>
+          <div class="label">Giây</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const targetDate = new Date("2026-06-23T00:00:00+07:00");
+
+    const d = document.getElementById("days");
+    const h = document.getElementById("hours");
+    const m = document.getElementById("minutes");
+    const s = document.getElementById("seconds");
+    const targetText = document.getElementById("targetText");
+
+    targetText.textContent = targetDate.toLocaleDateString("vi-VN", {
+      weekday:"long", year:"numeric", month:"long", day:"2-digit"
+    });
+
+    function pad(n){ return String(n).padStart(2,"0"); }
+
+    function update(){
+      const now = new Date();
+      let diff = targetDate - now;
+
+      if(diff <= 0){
+        d.textContent=h.textContent=m.textContent=s.textContent="00";
+        return;
+      }
+
+      const total = Math.floor(diff/1000);
+      const days = Math.floor(total/86400);
+      const hours = Math.floor((total%86400)/3600);
+      const mins = Math.floor((total%3600)/60);
+      const secs = total%60;
+
+      d.textContent = days;
+      h.textContent = pad(hours);
+      m.textContent = pad(mins);
+      s.textContent = pad(secs);
+    }
+
+    update();
+    setInterval(update,1000);
+  </script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</body>
+</html>
     <footer class="footer">
         <div class="container">
             <p>&copy; 9A7 - <i class="fas fa-heart"></i>Make by La Minh Khánh</p>
