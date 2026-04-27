@@ -1,4 +1,85 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	 
+     const questions = [
+  {
+    question: "Thanh xuân của chúng ta là gì?",
+    A: "Game",
+    B: "Bạn bè",
+    C: "Ngủ",
+    D: "TikTok",
+    correct: "B",
+    img: "style/question/1.jpg"
+  },
+  {
+    question: "9A7 có bao nhiêu thành viên(bao gồm cả giáo viên)?",
+    A: "38",
+    B: "67",
+    C: "36",
+    D: "18",
+    correct: "A",
+    img: "style/question/2.jpg"
+  },
+  {
+    question: "Ai đẹp trai nhất lớp?",
+    A: "Tôi",
+    B: "Bạn",
+    C: "Tất cả",
+    D: "Không ai",
+    correct: "C",
+    img: "style/question/3.jpg"
+  }
+];
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', () => {
+	let currentQuestion = null;
+
+    function loadRandomQuestion() {
+    const randomIndex = Math.floor(Math.random() * questions.length);
+    currentQuestion = questions[randomIndex];
+
+    document.getElementById("gateImg").src = currentQuestion.img;
+    document.getElementById("gateQuestion").innerText = currentQuestion.question;
+
+    const buttons = document.querySelectorAll(".gate-btn");
+
+    buttons.forEach(btn => {
+        const key = btn.getAttribute("data-answer");
+        btn.innerText = key + ". " + currentQuestion[key];
+    });
+}
+
+// gọi khi load
+    loadRandomQuestion();
     const gatekeeper = document.getElementById('gatekeeper');
     const gateBtns = document.querySelectorAll('.gate-btn');
     const gateAlert = document.getElementById('gateAlert');
@@ -18,7 +99,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const answer = btn.getAttribute('data-answer');
                 const card = gatekeeper.querySelector('.gate-card');
                 
-                if (answer === 'D') {
+                if (answer === currentQuestion.correct) {
+					startHeartEffect();
                     btn.classList.add('correct');
                     if (card) card.classList.add('blur-all');
                     if (alertGif) alertGif.src = correctGif;
@@ -105,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
 { name: 'Bùi Hoàng Long', nickname: 'Dragon', quote: 'Bay cao vươn xa.', img: 'style/img/ThanhVien/HoangLong.jpg', hobbies: 'Game, công nghệ', message: 'Đỉnh cao nhé!' },
 { name: 'Nguyễn Thành Long', nickname: 'King', quote: 'Sinh ra để dẫn đầu.', img: 'style/img/ThanhVien/ThanhLong.jpg', hobbies: 'Kinh doanh, lãnh đạo', message: 'Luôn top 1!' },
 { name: 'Đặng Hiền Mai', nickname: 'Soft', quote: 'Nhẹ nhàng mà sâu sắc.', img: 'style/img/ThanhVien/HienMai.jpg', hobbies: 'Vẽ, nghe nhạc', message: 'Luôn dễ thương!' },
-{ name: 'Tiêu Công Minh', nickname: 'Thinker', quote: 'Suy nghĩ tạo nên khác biệt.', img: 'style/img/ThanhVien/CongMInh.jpg', hobbies: 'Đọc sách, học tập', message: 'Thông minh mãi nhé!' },
+{ name: 'Tiêu Công Minh', nickname: 'Thinker', quote: 'Suy nghĩ tạo nên khác biệt.', img: 'style/img/ThanhVien/CongMinh.jpg', hobbies: 'Đọc sách, học tập', message: 'Thông minh mãi nhé!' },
 { name: 'Nguyễn Tuấn Nam', nickname: 'Storm', quote: 'Mạnh mẽ như bão.', img: 'style/img/ThanhVien/TuanNam.jpg', hobbies: 'Bóng đá, gym', message: 'Luôn bứt phá!' },
 { name: 'Trần Trọng Nghĩa', nickname: 'Hero', quote: 'Không ngại thử thách.', img: 'style/img/ThanhVien/TrongNghia.jpg', hobbies: 'Game, thể thao', message: 'Tin vào mình!' },
 { name: 'Chu Văn Nhân', nickname: 'Kind', quote: 'Tử tế là sức mạnh.', img: 'style/img/ThanhVien/VanNhan.jpg', hobbies: 'Thiện nguyện, đọc sách', message: 'Luôn tốt bụng!' },
@@ -121,6 +203,21 @@ document.addEventListener('DOMContentLoaded', () => {
 { name: 'Bùi Minh Vũ', nickname: 'Shadow', quote: 'Âm thầm nhưng mạnh.', img: 'style/img/ThanhVien/MinhVu.jpg', hobbies: 'Code, chơi game', message: 'Luôn bí ẩn!' },
 { name: 'Bùi Thị Như Ý', nickname: 'Dream', quote: 'Sống với ước mơ.', img: 'style/img/ThanhVien/NhuY.jpg', hobbies: 'Vẽ, viết', message: 'Đừng từ bỏ nhé!' }
      ];
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+
+
+
+
+
 
     let currentIndex = 0;
     let isShowingAll = false;
@@ -242,7 +339,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const galleryImages = [];
     const layoutClasses = ['', 'wide', 'tall', ''];
 
-    for (let i = 1; i <= 16; i++) {
+    for (let i = 1; i <= 25; i++) {
         const randomClass = layoutClasses[Math.floor(Math.random() * layoutClasses.length)];
         galleryImages.push({
             src: `style/img/AnhTapThe/Anh (${i}).jpg`,
@@ -705,3 +802,67 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setInterval(createParticle, 300);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ===== HEART EFFECT 5s =====
+function startHeartEffect() {
+  const style = document.createElement("style");
+  style.innerHTML = `
+    .heart {
+      position: fixed;
+      top: -20px;
+      font-size: 20px;
+      pointer-events: none;
+      animation: fall linear forwards;
+      z-index: 9999;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 0;
+      }
+      10% { opacity: 1; }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  `;
+  document.head.appendChild(style);
+
+  const hearts = ["💖","💗","💕","💓","❤️","💞"];
+
+  function createHeart(){
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerText = hearts[Math.floor(Math.random()*hearts.length)];
+
+    heart.style.left = Math.random()*100 + "vw";
+    heart.style.fontSize = (15 + Math.random()*25) + "px";
+    heart.style.animationDuration = (3 + Math.random()*2) + "s";
+
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),5000);
+  }
+
+  const interval = setInterval(createHeart, 120);
+
+  setTimeout(()=>{
+    clearInterval(interval);
+  }, 5000);
+}
