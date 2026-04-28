@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+
+<!-- Mirrored from gift-year-book.vercel.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 Apr 2026 04:48:58 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="../i.postimg.cc/qvjz8QFW/Logo.png" />
+    <title>9A7</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&amp;family=Inter:wght@300;400;600&amp;family=Pacifico&amp;display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+
+<body style="overflow: hidden;">
+    <div id="gatekeeper" class="gatekeeper-overlay">
+        <div class="gate-card">
+            <img id="gateImg" src="" class="gate-img" alt="Câu hỏi">
+            <p id="gateQuestion" class="gate-question"></p>
+
+            <div class="gate-options">
+            <button class="gate-btn" data-answer="A"></button>
+            <button class="gate-btn" data-answer="B"></button>
+            <button class="gate-btn" data-answer="C"></button>
+            <button class="gate-btn" data-answer="D"></button>
+          </div>
+        </div>
+
+        <div id="gateAlert" class="gate-alert">
+            <div class="alert-content">
+                <img id="alertGif" src="#" alt="Alert Animation" class="alert-img">
+                <p id="alertMsg"></p>
+            </div>
+        </div>
+    </div>
+
+    <audio id="bg-music"></audio>
+
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Thanh Xuân</a>
+            <ul class="nav-links">
+                <li><a href="#home">Trang chủ</a></li>
+                <li><a href="#members">Thành viên</a></li>
+                <li><a href="#gallery">Khoảnh khắc</a></li>
+                <li><a href="#timeline">Dòng thời gian</a></li>
+                <li><a href="#guestbook">Lưu bút</a></li>
+                <li><a href="javascript:void(0)" id="musicMenu">Nhạc</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+<section id="home" class="hero">
+  <div class="hero-bg"
+    style="background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('style/img/DTU06475.jpg');">
+  </div>
+  <div class="sunlight"></div>
+  <div class="particles" id="particles-js"></div>
+
+  <div class="hero-content">
+    <h1 class="handwritten-title animate-up">
+      <span id="typingTitle"></span><span class="typing-cursor"></span>
+    </h1>
+    <p class="hero-subtitle animate-up-delay">"37 vì sao và 1 vầng trăng – cùng thắp sáng một bầu trời ký ức."</p>
+    <a href="#members" class="btn btn-primary animate-up-delay-2">Khám phá kỷ niệm</a>
+  </div>
+
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="mouse"></div>
+  </div>
+</section>
+
+<style>
+  .handwritten-title{
+    font-size: clamp(42px, 7vw, 86px);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.05;
+    color: #fff;
+    text-shadow: 0 0 18px rgba(255,255,255,.18), 0 0 35px rgba(255,255,255,.10);
+    position: relative;
+  }
+
+  #typingTitle{
+    display: inline-block;
+    min-width: 1px;
+  }
+
+  .typing-cursor{
+    display: inline-block;
+    width: 8px;
+    height: 1em;
+    margin-left: 6px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #fff, #ffd166);
+    transform: translateY(4px);
+    animation: blink 0.8s infinite;
+  }
+
+  @keyframes blink{
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+</style>
+
+<script>
+  const titles = [
+    "Thanh Xuân Của 9a7",
+    "Kỷ Niệm Thanh Xuân",
+    "Mãi mãi là một gia đình ❤"
+  ];
+
+  const el = document.getElementById("typingTitle");
+  let wordIndex = 0;
+  let charIndex = 0;
+  let deleting = false;
+
+  const typeSpeed = 120;
+  const deleteSpeed = 65;
+  const pauseAfterType = 1400;
+  const pauseAfterDelete = 250;
+
+  function typeLoop() {
+    const text = titles[wordIndex];
+
+    if (!deleting) {
+      charIndex++;
+      el.textContent = text.slice(0, charIndex);
+
+      if (charIndex === text.length) {
+        deleting = true;
+        setTimeout(typeLoop, pauseAfterType);
+        return;
+      }
+
+      setTimeout(typeLoop, typeSpeed);
+    } else {
+      charIndex--;
+      el.textContent = text.slice(0, charIndex);
+
+      if (charIndex <= 0) {
+        deleting = false;
+        wordIndex = (wordIndex + 1) % titles.length;
+        setTimeout(typeLoop, pauseAfterDelete);
+        return;
+      }
+
+      setTimeout(typeLoop, deleteSpeed);
+    }
+  }
+
+  typeLoop();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kỉ niệm thanh xuân</title>
+
+  <style>
+    :root{
+      --bg:#ffffff;
+      --border:#e5e7eb;
+      --text:#0f172a;
+      --muted:#64748b;
+      --accent1:#6366f1;
+      --accent2:#06b6d4;
+      --accent3:#f472b6;
+      --accent4:#22c55e;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+    }
+
+    .wrap{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:16px;
+    }
+
+    .panel{
+      width:100%;
+      max-width:1100px;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:clamp(16px,4vw,30px);
+      box-shadow:0 15px 35px rgba(0,0,0,.05);
+      position:relative;
+      overflow:hidden;
+    }
+
+    /* nền đẹp nhưng nhẹ */
+    .panel::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(99,102,241,.12), transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(6,182,212,.12), transparent 40%);
+      z-index:0;
+    }
+
+    .panel > *{
+      position:relative;
+      z-index:1;
+    }
+
+    .header{
+      text-align:center;
+      margin-bottom:20px;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:#f8fafc;
+      border:1px solid var(--border);
+      color:var(--muted);
+      font-size:12px;
+    }
+
+    .dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+    }
+
+    .grid{
+      display:grid;
+      gap:12px;
+      grid-template-columns: repeat(4,1fr);
+    }
+
+    /* tablet */
+    @media(max-width:900px){
+      .grid{grid-template-columns:repeat(2,1fr);}
+    }
+
+    /* điện thoại */
+    @media(max-width:500px){
+      .grid{grid-template-columns:1fr;}
+    }
+
+    .card{
+      border-radius:18px;
+      background:#fff;
+      border:1px solid var(--border);
+      padding:18px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      box-shadow:0 8px 20px rgba(0,0,0,.04);
+      min-height:140px;
+      transition:.2s;
+    }
+
+    .card:active{
+      transform:scale(.97);
+    }
+
+    .topline{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .icon{
+      font-size:22px;
+    }
+
+    .badge{
+      font-size:10px;
+      color:var(--muted);
+      text-transform:uppercase;
+    }
+
+    .big{
+      font-size: clamp(32px,8vw,60px);
+      font-weight:900;
+      margin-top:10px;
+    }
+
+    .label{
+      font-size:12px;
+      color:var(--muted);
+      letter-spacing:.2em;
+      text-transform:uppercase;
+    }
+
+    .c1 .big{color:var(--accent1);}
+    .c2 .big{color:var(--accent2);}
+    .c3 .big{color:var(--accent3);}
+    .c4 .big{color:var(--accent4);}
+
+    .footer-note{
+      margin-top:18px;
+      text-align:center;
+      font-size:12px;
+      color:var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="panel">
+
+      <div class="header">
+        <div class="eyebrow"><span class="dot"></span> Thanh xuân lớp mình</div>
+      </div>
+
+      <div class="grid">
+        <div class="card c1">
+          <div class="topline">
+            <div class="icon">👥</div>
+            <div class="badge">Lớp</div>
+          </div>
+          <div>
+            <div class="big">38</div>
+            <div class="label">Thành viên</div>
+          </div>
+        </div>
+
+        <div class="card c2">
+          <div class="topline">
+            <div class="icon">📚</div>
+            <div class="badge">Học</div>
+          </div>
+          <div>
+            <div class="big">4</div>
+            <div class="label">Năm</div>
+          </div>
+        </div>
+
+        <div class="card c3">
+          <div class="topline">
+            <div class="icon">✨</div>
+            <div class="badge">Nhớ</div>
+          </div>
+          <div>
+            <div class="big">∞</div>
+            <div class="label">Kỉ niệm</div>
+          </div>
+        </div>
+
+        <div class="card c4">
+          <div class="topline">
+            <div class="icon">🌷</div>
+            <div class="badge">Xuân</div>
+          </div>
+          <div>
+            <div class="big">1</div>
+            <div class="label">Thanh xuân</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-note">
+        Thanh xuân có thể qua đi, nhưng kỉ niệm thì ở lại.
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <section id="members" class="section members">
+        <div class="container">
+            <h2 class="section-title">Thành Viên</h2>
+            <div class="member-grid" id="memberGrid">
+            </div>
+            <div class="load-more-container">
+                <button id="loadMoreBtn" class="btn btn-outline">Xem thêm<i class="fas fa-chevron-down"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section gallery">
+        <div class="container">
+            <h2 class="section-title">Khoảnh Khắc Đáng Nhớ</h2>
+            <div class="gallery-grid" id="galleryGrid">
+            </div>
+        </div>
+    </section>
+
+    <section id="timeline" class="section timeline">
+        <div class="container">
+            <h2 class="section-title">Dòng Thời Gian</h2>
+            <div class="timeline-container" id="timelineList">
+                <div class="timeline-line"></div>
+            </div>
+            <div class="load-more-container">
+                <button id="loadMoreTimeline" class="btn btn-outline">Xem thêm<i
+                        class="fas fa-chevron-down"></i></button>
+            </div>
+        </div>
+    </section>
+
+<section id="video" class="section video-section">
+    <div class="container">
+        <h2 class="section-title">Phim Ngắn Kỷ Niệm</h2>
+        <div class="video-container">
+            <div class="video-wrapper">
+
+                <iframe 
+                    width="100%" 
+                    height="100%"
+                    src="https://www.youtube.com/embed/6LPZ-x_6kVo"
+                    title="Kỷ yếu lớp"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="guestbook" class="section guestbook">
+        <div class="container">
+            <h2 class="section-title">Những Lời Nhắn Nhủ</h2>
+            <div class="sticky-notes-container" id="stickyNotes">
+            </div>
+            <div class="load-more-container">
+                <button id="loadMoreGuestbook" class="btn btn-outline">Xem thêm<i
+                        class="fas fa-chevron-down"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <div id="galleryModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <button id="prevBtn" class="modal-nav-btn prev"><i class="fa-solid fa-chevron-left"></i></button>
+        <button id="nextBtn" class="modal-nav-btn next"><i class="fa-solid fa-chevron-right"></i></button>
+        <div class="modal-main-content">
+            <img class="modal-content" id="modalImg">
+            <div id="caption"></div>
+
+            <div class="reaction-container">
+                <div class="reaction-item" data-emoji="👍">👍</div>
+                <div class="reaction-item" data-emoji="❤️">❤️</div>
+                <div class="reaction-item" data-emoji="🥰">🥰</div>
+                <div class="reaction-item" data-emoji="😂">😂</div>
+                <div class="reaction-item" data-emoji="🥹">🥹</div>
+                <div class="reaction-item" data-emoji="😡">😡</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="profileModal" class="modal profile-modal">
+        <div class="modal-card">
+            <span class="close-profile">&times;</span>
+            <div class="profile-header">
+                <img id="profileImg" src="#" alt="">
+                <div class="profile-info">
+                    <h3 id="profileName">Tên học sinh</h3>
+                    <p id="profileNickname" class="nickname">Nickname</p>
+                </div>
+            </div>
+            <div class="profile-body">
+                <div class="profile-field">
+                    <i class="fas fa-heart"></i>
+                    <div>
+                        <strong>Sở thích:</strong>
+                        <span id="profileHobbies">...</span>
+                    </div>
+                </div>
+                <div class="profile-field">
+                    <i class="fas fa-comment-dots"></i>
+                    <div>
+                        <strong>Lời nhắn:</strong>
+                        <span id="profileMessage">"Thanh xuân như một tách trà..."</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Music Modal (Music Player UI) -->
+    <div id="musicModal" class="modal profile-modal">
+        <div class="modal-card">
+            <span class="close-music">&times;</span>
+            
+            <div class="music-player-header">
+                <div class="album-disc" id="playerDisc">
+                    <img src="style/sound/Anh%20(1).jpg" id="currentAlbumArt" alt="Album Art">
+                </div>
+                <div class="player-info">
+                    <div class="song-title-wrapper">
+                        <h3 id="currentSongTitle">Tháng Năm Không Quên</h3>
+                    </div>
+                    <div class="player-controls">
+                        <i class="fas fa-step-backward" id="prevSongBtn"></i>
+                        <i class="fas fa-play" id="mainPlayBtn"></i>
+                        <i class="fas fa-step-forward" id="nextSongBtn"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="music-list-container">
+                <div class="music-option pulse-btn" data-src="style/sound/Tháng Năm Không Quên.mp3" data-img="style/sound/Anh (1).jpg">
+                    <img src="style/sound/Anh%20(1).jpg" alt="Tháng Năm Không Quên">
+                    <div class="music-info">
+                        <strong>Tháng Năm Không Quên</strong>
+                    </div>
+                </div>
+                <div class="music-option pulse-btn" data-src="style/sound/Năm Tháng Trôi Qua.mp3" data-img="style/sound/Anh (2).jpg">
+                    <img src="style/sound/Anh%20(2).jpg" alt="Năm Tháng Trôi Qua">
+                    <div class="music-info">
+                        <strong>Năm Tháng Trôi Qua</strong>
+                    </div>
+                </div>
+                <div class="music-option pulse-btn" data-src="style/sound/Nhớ Mãi Chuyến Đi Này.mp3" data-img="style/sound/Anh (3).jpg">
+                    <img src="style/sound/Anh%20(3).jpg" alt="Nhớ Mãi Chuyến Đi Này">
+                    <div class="music-info">
+                        <strong>Nhớ Mãi Chuyến Đi Này</strong>
+                    </div>
+                </div>
+                <div class="music-option pulse-btn" data-src="style/sound/Không Yêu Cũng Chẳng Cô Đơn.mp3" data-img="style/sound/Anh (4).jpg">
+                    <img src="style/sound/Anh%20(4).jpg" alt="Không Yêu Cũng Chẳng Cô Đơn">
+                    <div class="music-info">
+                        <strong>Không Yêu Cũng Chẳng Cô Đơn</strong>
+                    </div>
+                </div>
+                <div class="music-option pulse-btn" data-src="style/sound/Mùa Hè Của Peppa.mp3" data-img="style/sound/Anh (5).jpg">
+                    <img src="style/sound/Anh%20(5).jpg" alt="Mùa Hè Của Peppa">
+                    <div class="music-info">
+                        <strong>Mùa Hè Của Peppa</strong>
+                    </div>
+                </div>
+                <div class="music-option pulse-btn" data-src="style/sound/Nơi Pháo Hoa Rực Rỡ.mp3" data-img="style/sound/Anh (6).jpg">
+                    <img src="style/sound/Anh%20(6).jpg" alt="Nơi Pháo Hoa Rực Rỡ">
+                    <div class="music-info">
+                        <strong>Nơi Pháo Hoa Rực Rỡ</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kì thi vào 10</title>
+
+  <style>
+    :root{
+      --bg:#f8fafc;
+      --card:#ffffffcc;
+      --border:#e5e7eb;
+      --text:#0f172a;
+      --muted:#64748b;
+      --accent:#6366f1;
+      --shadow:0 20px 40px rgba(0,0,0,.08);
+      --blur: blur(16px);
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, sans-serif;
+      background:
+        radial-gradient(circle at 20% 20%, #e0e7ff, transparent 40%),
+        radial-gradient(circle at 80% 30%, #cffafe, transparent 40%),
+        var(--bg);
+      color:var(--text);
+    }
+
+    .wrap{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:20px;
+    }
+
+    .panel{
+      width:min(1000px,100%);
+      background:var(--card);
+      backdrop-filter:var(--blur);
+      border:1px solid var(--border);
+      border-radius:28px;
+      padding:40px 30px;
+      text-align:center;
+      box-shadow:var(--shadow);
+    }
+
+    /* QUOTE */
+    .quote{
+      font-size: clamp(28px,4vw,50px);
+      font-weight:900;
+      line-height:1.2;
+      letter-spacing:-.02em;
+      background: linear-gradient(90deg, #111, #6366f1);
+      -webkit-background-clip:text;
+      color:transparent;
+    }
+
+    .sub{
+      margin-top:10px;
+      font-size:14px;
+      letter-spacing:.25em;
+      text-transform:uppercase;
+      color:var(--muted);
+    }
+
+    .date-pill{
+      display:inline-block;
+      margin-top:20px;
+      padding:10px 16px;
+      border-radius:14px;
+      background:#f1f5f9;
+      border:1px solid var(--border);
+      font-weight:600;
+      color:#334155;
+    }
+
+    .grid{
+      margin-top:30px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    @media(max-width:700px){
+      .grid{grid-template-columns:repeat(2,1fr);}
+    }
+
+    .card{
+      padding:20px;
+      border-radius:20px;
+      background:#ffffff;
+      border:1px solid var(--border);
+      box-shadow:0 10px 25px rgba(0,0,0,.05);
+      transition:.25s;
+    }
+
+    .card:hover{
+      transform:translateY(-4px);
+      box-shadow:0 20px 35px rgba(0,0,0,.1);
+    }
+
+    .num{
+      font-size: clamp(40px,6vw,70px);
+      font-weight:800;
+      color:#111827;
+    }
+
+    .label{
+      margin-top:8px;
+      font-size:14px;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.15em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="panel">
+
+      <!-- QUOTE -->
+      <div class="quote">
+        Cười hôm nay thôi, mai còn phải cố gắng
+      </div>
+      <div class="sub">Kì thi vào 10</div>
+
+      <div class="date-pill">
+        🎯 <span id="targetText"></span>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="num" id="days">00</div>
+          <div class="label">Ngày</div>
+        </div>
+        <div class="card">
+          <div class="num" id="hours">00</div>
+          <div class="label">Giờ</div>
+        </div>
+        <div class="card">
+          <div class="num" id="minutes">00</div>
+          <div class="label">Phút</div>
+        </div>
+        <div class="card">
+          <div class="num" id="seconds">00</div>
+          <div class="label">Giây</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const targetDate = new Date("2026-06-23T00:00:00+07:00");
+
+    const d = document.getElementById("days");
+    const h = document.getElementById("hours");
+    const m = document.getElementById("minutes");
+    const s = document.getElementById("seconds");
+    const targetText = document.getElementById("targetText");
+
+    targetText.textContent = targetDate.toLocaleDateString("vi-VN", {
+      weekday:"long", year:"numeric", month:"long", day:"2-digit"
+    });
+
+    function pad(n){ return String(n).padStart(2,"0"); }
+
+    function update(){
+      const now = new Date();
+      let diff = targetDate - now;
+
+      if(diff <= 0){
+        d.textContent=h.textContent=m.textContent=s.textContent="00";
+        return;
+      }
+
+      const total = Math.floor(diff/1000);
+      const days = Math.floor(total/86400);
+      const hours = Math.floor((total%86400)/3600);
+      const mins = Math.floor((total%3600)/60);
+      const secs = total%60;
+
+      d.textContent = days;
+      h.textContent = pad(hours);
+      m.textContent = pad(mins);
+      s.textContent = pad(secs);
+    }
+
+    update();
+    setInterval(update,1000);
+  </script>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</body>
+</html>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 9A7 - <i class="fas fa-heart"></i>Make by La Minh Khánh</p>
+        </div>
+    </footer>
+
+    <script src="style/script.js"></script>
+</body>
+
+
+<!-- Mirrored from gift-year-book.vercel.app/ by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 Apr 2026 04:49:05 GMT -->
+</html>
