@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
 { name: 'Phan Thị Ngọc Bích', nickname: 'Won Iremin', quote: 'Lấp lánh như viên ngọc.', img: 'style/img/ThanhVien/NgocBich.jpg', hobbies: 'Hát, ăn, tiền, Nghe nhạc cortis, kpop', message: 'Luôn xinh đẹp!' },
 { name: 'Hồ Văn Chính', nickname: 'Chính cháy', quote: 'Sống đúng với bản thân.', img: 'style/img/ThanhVien/VanChinh.jpg', hobbies: 'Đá bóng', message: 'Giữ vững lập trường!' },
 { name: 'Hoàng Việt Cường', nickname: 'Cùn', quote: 'Mạnh mẽ từng bước.', img: 'style/img/ThanhVien/VietCuong.jpg', hobbies: 'Đá bóng', message: 'Luôn chiến thắng!' },
-{ name: 'Nguyễn Thị Hằng Diễm', nickname: 'Su', quote: 'Nhẹ nhàng như hoa.', img: 'style/img/ThanhVien/HangDiem.jpg', hobbies: 'Săn đồ hình cua', message: 'Luôn dịu dàng!' },
+{ name: 'Nguyễn Thị Hằng Diễm', nickname: 'Diem Su', quote: 'Nhẹ nhàng như hoa.', img: 'style/img/ThanhVien/HangDiem.jpg', hobbies: 'Săn đồ hình con cua', message: 'Luôn dịu dàng!' },
 { name: 'Đinh Quảng Đại', nickname: 'Đại bò', quote: 'Chiếu sáng con đường.', img: 'style/img/ThanhVien/QuangDai.jpg', hobbies: 'Chơi game', message: 'Tỏa sáng nhé!' },
 { name: 'Nguyễn Vũ Thanh Hà', nickname: 'SkyBlue', quote: 'Bình yên như bầu trời.', img: 'style/img/ThanhVien/ThanhHa.jpg', hobbies: 'Nghe nhạc', message: 'Luôn an yên!' },
 { name: 'Đào Minh Hiếu', nickname: 'Hếu', quote: 'Nụ cười là tất cả.', img: 'style/img/ThanhVien/MinhHieu.jpg', hobbies: 'Cờ vua', message: 'Cười nhiều lên!' },
